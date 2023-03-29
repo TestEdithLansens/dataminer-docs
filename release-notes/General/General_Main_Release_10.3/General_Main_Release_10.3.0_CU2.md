@@ -38,6 +38,20 @@ Overall performance of SLAnalytics has increased because of a number of enhancem
 
 Up to now, GQI data sources that require an Elasticsearch database used the `DatabaseStateRequest<ElasticsearchState>` message to check whether Elasticsearch was available. From now on, they will use the `GetInfoMessage(InfoType.Database)` message instead.
 
+#### Improved error handling when elements go into an error state [ID_35944]
+
+<!-- MR 10.2.0 [CU14]/10.3.0 [CU2] - FR 10.3.5 -->
+
+When an element goes into an error state after an attempt to activate it failed, from now on, no more calls to SLProtocol, SLElement or SLSpectrum will be made for that element.
+
+Also, when an element that generates DVE child elements or virtual functions goes into an error state, from now on, the generated DVE child elements or virtual functions will also go into an error state. However, in order to avoid too many alarms to be generated, only one alarm (for the main element) will be generated.
+
+The following issues have also been fixed:
+
+- When a DVE parent element in an error state on DataMiner startup was activated, its DVE child elements or virtual functions would not be properly loaded.
+
+- When a DVE parent element was started, the method that has to make sure that ElementInfo and ElementData are in sync would incorrectly not check all child elements.
+
 ### Fixes
 
 #### SLLogCollector: Problem when collecting multiple memory dumps with the 'Now and when memory increases with X Mb' option [ID_35617]
@@ -58,6 +72,12 @@ From now on, the execution of the NATS installer at DMA startup will be skipped 
 
 > [!NOTE]
 > When an error occurs while running a WMI query, and no NATS/NAS service is running, NATS will not be installed automatically. A manual installation of NATS will be needed.
+
+#### Existing masked alarms would incorrectly affect the overall alarm severity of an element [ID_35678]
+
+<!-- MR 10.2.0 [CU14]/10.3.0 [CU2] - FR 10.3.5 -->
+
+Existing masked alarms would incorrectly affect the overall alarm severity of an element.
 
 #### SLElement could leak memory when updating alarm templates containing conditions [ID_35728]
 

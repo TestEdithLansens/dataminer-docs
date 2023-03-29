@@ -263,6 +263,16 @@ Example:
 
 When an SLNet connection supported protocol buffer serialization, DateTime instances would not get serialized correctly.
 
+#### GQI: GetArgumentValue method would throw an exception when used to access the value of an optional argument [ID_35783]
+
+<!-- MR 10.4.0 - FR 10.3.5 -->
+
+When the `GetArgumentValue<T>(string name)` method was used in an ad hoc data source or a custom operator script to access the value of an optional argument that had not been passed, the following exception would be thrown:
+
+```txt
+Could not find argument with name '{argument.Name}'.
+```
+
 #### Input/output values of a matrix element would incorrectly be overridden due to a caching issue [ID_35857]
 
 <!-- MR 10.4.0 - FR 10.3.4 [CU0] -->
