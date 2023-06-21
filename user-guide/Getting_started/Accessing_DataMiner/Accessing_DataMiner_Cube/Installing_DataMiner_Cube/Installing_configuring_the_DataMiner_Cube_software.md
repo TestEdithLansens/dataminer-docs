@@ -16,10 +16,17 @@ Once the application has been installed, each time you reopen its user interface
 ## In this section
 
 - [Prerequisites](xref:Prerequisites_Cube)
-- [Installing the DataMiner Cube desktop application](xref:Installing_the_DataMiner_Cube_desktop_application) 
+
+- [Installing the DataMiner Cube desktop application](xref:Installing_the_DataMiner_Cube_desktop_application)
+
 - [Cleaning up the DataMiner Cube desktop app cache](xref:Cleaning_up_the_DataMiner_Cube_desktop_app_cache)
+
 - [Uninstalling the DataMiner Cube desktop application](xref:Uninstalling_the_DataMiner_Cube_desktop_application)
+
 - [Changing the default browser engine used in DataMiner Cube](xref:Changing_the_default_browser_engine_used_in_DataMiner_Cube)
+
 - [Configuring Microsoft Edge to run DataMiner Cube](xref:Configuring_Microsoft_edge_to_run_Cube)
+
 - [Installing the Skyline certificates](xref:Installing_the_Skyline_certificates)
+
 - [DataMiner Cube deployment methods](xref:DataMiner_Cube_deployment_methods)
